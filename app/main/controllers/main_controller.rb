@@ -1,10 +1,17 @@
 class MainController < ModelController
+
   def index
     # Add code for when the index view is loaded
+    #self._current_text = store._texts
   end
 
   def about
     # Add code for when the about view is loaded
+  end
+
+  def add_text
+    store._texts << self._new_text.cur.to_h
+    self._new_text = {}
   end
 
   private
