@@ -1,5 +1,28 @@
 <:Title>
-  Welcome to Volt
+  Welcome to VoltChat
 
 <:Body>
-  <h1>Welcome to Volt</h1>
+  <h1>Welcome to VoltChat!</h1>
+
+  <div class="container-fluid">
+    <div class="row text-left">
+      <div class="jumbotron">
+        <p>Nothing happened here yet...</p>
+      </div>
+    </div>
+
+    <:volt:notices />
+
+    <form e-submit="add_text" class="form-inline" role="form">
+      <div class="form-group">
+        <label class="sr-only" for="exampleInputNickname">Nickname</label>
+        <input type="nickname" class="form-control" id="exampleInputNickname" placeholder="Nickname" value="{_new_text._nickname}">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="chatMessage">Chat Text</label>
+        <input type="text" class="form-control" id="chatMessage" placeholder="Say something" value="{_new_text._text}">
+      </div>
+    <button type="submit" class="btn btn-default">Say</button>
+    </form>
+
+  </div>
