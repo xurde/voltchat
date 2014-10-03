@@ -2,7 +2,7 @@ class MainController < ModelController
 
   def index
     # Add code for when the index view is loaded
-    #self._current_text = store._texts
+    #self._current_text = store._messages
   end
 
   def about
@@ -10,7 +10,7 @@ class MainController < ModelController
   end
 
   def add_text
-    store._texts << self._new_text.cur.to_h
+    store._messages << self._new_text.cur.to_h
     self._new_text = {}
   end
 
