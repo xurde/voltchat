@@ -12,7 +12,7 @@ GEM
       xpath (~> 2.0)
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    childprocess (0.5.3)
+    childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver2-helper (0.0.8)
       nokogiri
@@ -101,7 +101,7 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    volt (0.7.23)
+    volt (0.8.1)
       bundler (>= 1.5)
       capybara (~> 2.4.2)
       chromedriver2-helper (~> 0.0.8)
@@ -143,7 +143,7 @@ DEPENDENCIES
   bson_ext (~> 1.9.0)
   jubilee
   thin (~> 1.6.0)
-  volt (= 0.7.23)
+  volt (~> 0.8)
   volt-bootstrap
   volt-bootstrap-jumbotron-theme
   volt-sockjs
