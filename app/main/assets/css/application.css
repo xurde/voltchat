@@ -1,7 +1,7 @@
 /* Application Styles */
 
 #chat-container {
-
+  border: solid thin grey;
 }
 
 #form-chat {

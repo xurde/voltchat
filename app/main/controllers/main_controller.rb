@@ -10,8 +10,8 @@ class MainController < ModelController
   end
 
   def add_text
-    store._messages << self._new_text.cur.to_h
-    self._new_text = {}
+    store._messages << self._new_message.to_h
+    self._new_message = {}
   end
 
   private
