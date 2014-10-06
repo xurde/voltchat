@@ -1,19 +1,19 @@
 <:Title>
-  {#template main_path, "title", {controller_group: 'main'}}
+  {{ template main_path, "title", {controller_group: 'main'} }}
 
 <:Body>
   <div class="container">
     <div class="header">
       <ul class="nav nav-pills pull-right">
-        <:nav href="/" text="Home" />
-        <:nav href="/about" text="About" />
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
       <h3 class="text-muted">VoltChat</h3>
     </div>
 
     <:volt:notices />
 
-    {#template main_path, 'body', {controller_group: 'main'}}
+    {{ template main_path, 'body', {controller_group: 'main' } }}
 
     <div class="footer">
       <p>SixClicks 2014</p>
@@ -22,6 +22,6 @@
   </div>
 
 <:Nav>
-  <li class="{#if url.path.split('/')[1] == @href.split('/')[1]}active{/}">
-    <a href="{@href}">{@text}</a>
+  <li class="{{ if url.path.split('/')[1] == @href.split('/')[1] }}active{{ end }}">
+    <a href="{{ @href }}">{{ @text }}</a>
   </li>

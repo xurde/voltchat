@@ -10,8 +10,18 @@ class MainController < ModelController
   end
 
   def add_text
-    store._messages << self._new_message.to_h
+    nickname = local_store._nickname || '(Anonym)'
+    new_message = self._new_message
+    new_message << {_nickname: nickname }
+    store._messages << new_message
     self._new_message = {}
+  end
+
+  def set_nickname
+    Volt.logger.info("Setting nickname to: #{self._user._nickname}")
+    local_store._nickname = self._user._nickname
+    flash = "Setting nickname to: #{self._user._nickname}"
+    self._user._nickname = nil
   end
 
   private
