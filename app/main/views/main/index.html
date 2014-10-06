@@ -29,7 +29,7 @@
     </form>
   {{ else }}
     <form e-submit="add_text" id="form-chat" class="form-inline" role="form">
-      <span>{{ local_store._nickname || 'anonym' }}</span>:
+      <span>{{ local_store._nickname ? "<strong>#{local_store._nickname}</strong>" : (anonym) }}</span>:
       <div class="form-group">
         <label class="sr-only" for="chatMessage">Chat Text</label>
         <input type="text" class="form-control" id="chatMessage" placeholder="Say something" value="{{ _new_message._text }}">
