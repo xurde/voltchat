@@ -10,10 +10,14 @@ class MainController < Volt::ModelController
   end
 
   def create_room
-    new_room = Hash.new
-    new_room[:name] = self._new_room.name
-    store._rooms << new_room
-    self._new_room = {}
+    # new_room = Hash.new
+    # new_room[:name] = page._new_room
+    # new_message = {nickname: nickname, text: self._new_message._text}
+    new_room = page._new_room
+    #new_room = {name: "Room #{store._rooms.size}"}
+    room = store._rooms << new_room
+    page._new_room = {}
+    go "/rooms/#{room._id}"
   end
 
   # def add_text

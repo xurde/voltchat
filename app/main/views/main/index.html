@@ -2,13 +2,12 @@
   Welcome to VoltChat
 
 <:Body>
-  <h1>Welcome to VoltChat!</h1>
-
-  <:volt:notices />
+  <h1>Welcome to VoltChat</h1>
+  <h3>Rooms list</h4>
 
   <div class="container-fluid">
     <div class="row text-left">
-      <div id="chat-container" class="well">
+      <div id="chat-container">
         {{ if store._rooms.size > 0 }}
           {{ store._rooms.each do |room| }}
             <li><a href="/rooms/{{room._id}}">{{ room._name }}</a></li>
@@ -16,10 +15,12 @@
         {{ else }}
           <p>There are no rooms yet...</p>
         {{ end }}
+      </div>
+      <div class="container">
         <form e-submit="create_room" id="form-room" class="form-inline" role="form">
           <div class="form-group">
             <label class="sr-only" for="exampleRoomName">Room name</label>
-            <input type="text" class="form-control" id="exampleRoomName" placeholder="Room name" value="{{_new_room.name}}">
+            <input type="text" class="form-control" id="exampleRoomName" placeholder="Room name" value="{{page._new_room._name}}">
           </div>
           <button type="submit" class="btn btn-default">Create</button>
         </form>

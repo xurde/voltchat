@@ -11,7 +11,6 @@ class RoomsController < Volt::ModelController
     store._rooms.find(_id: params._id).then do |results|
       self.model = results.first
     end
-
     nickname = local_store._nickname || '(Anon)'
     new_message = {nickname: nickname, text: self._new_message._text}
     self.model._messages << new_message

@@ -22,7 +22,7 @@
     <form e-submit="set_nickname" id="form-chat" class="form-inline" role="form">
       <div class="form-group">
         <label class="sr-only" for="exampleInputNickname">Nickname</label>
-        <input type="nickname" class="form-control" id="exampleInputNickname" placeholder="Nickname" value="{{ _user._nickname }}">
+        <input type="nickname" class="form-control" id="exampleInputNickname" placeholder="Nickname" value="{{_user._nickname}}">
       </div>
       <button type="submit" class="btn btn-default">Set</button>
     </form>
@@ -31,7 +31,7 @@
       <span>{{ local_store._nickname ? "<strong>#{local_store._nickname}</strong>" : (anonym) }}</span>:
       <div class="form-group">
         <label class="sr-only" for="chatMessage">Chat Text</label>
-        <input type="text" class="form-control" id="chatMessage" placeholder="Say something" value="{{ _new_message._text }}">
+        <input type="text" class="form-control" id="chatMessage" placeholder="Say something" value="{{_new_message._text}}">
       </div>
       <button type="submit" class="btn btn-default">Say</button>
     </form>
