@@ -1,4 +1,4 @@
-class MainController < ModelController
+class MainController < Volt::ModelController
 
   def index
     # Add code for when the index view is loaded
@@ -9,22 +9,29 @@ class MainController < ModelController
     # Add code for when the about view is loaded
   end
 
-  def add_text
-    Volt.logger.info("Receiving message: #{self._new_message}")
-    nickname = local_store._nickname || '(Anonym)'
-    new_message = Hash.new
-    new_message[:_text] = self._new_message._text
-    new_message[:_nickname] = nickname
-    store._messages << new_message
-    self._new_message = {}
+  def create_room
+    new_room = Hash.new
+    new_room[:name] = self._new_room.name
+    store._rooms << new_room
+    self._new_room = {}
   end
 
-  def set_nickname
-    Volt.logger.info("Setting nickname to: #{self._user._nickname}")
-    local_store._nickname = self._user._nickname
-    flash = "Setting nickname to: #{self._user._nickname}"
-    self._user._nickname = {}
-  end
+  # def add_text
+  #   Volt.logger.info("Receiving message: #{self._new_message}")
+  #   nickname = local_store._nickname || '(Anonym)'
+  #   new_message = Hash.new
+  #   new_message[:_text] = self._new_message._text
+  #   new_message[:_nickname] = nickname
+  #   store._messages << new_message
+  #   self._new_message = {}
+  # end
+  #
+  # def set_nickname
+  #   Volt.logger.info("Setting nickname to: #{self._user._nickname}")
+  #   local_store._nickname = self._user._nickname
+  #   flash = "Setting nickname to: #{self._user._nickname}"
+  #   self._user._nickname = {}
+  # end
 
   private
     # the main template contains a #template binding that shows another
