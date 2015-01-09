@@ -16,6 +16,7 @@ Volt.setup do |config|
     config.db_port = 27017
     config.db_name = (config.app_name + '_' + Volt.env.to_s)
   when 'heroku'
+    config.db_driver = 'mongo'
     config.db_uri = 'mongodb://heroku:fpWrptFHDIpoUc69gbIpfjGf_B_FsyilGO2fFVEPoSpLm20P50pTKRZexpNeC7mIEWOKRQ7Vb1Oh2fKwB4UH5w@dogen.mongohq.com:10005/app31108145'
   end
 
