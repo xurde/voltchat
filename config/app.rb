@@ -9,7 +9,7 @@ Volt.setup do |config|
   # file or with an environment variable (DB_NAME for example).
   puts "Loading config for Volt environment: #{Volt.env}"
 
-  case Volt.env
+  case Volt.env.to_s
   when 'development'
     config.db_driver = 'mongo'
     config.db_host = 'localhost'
