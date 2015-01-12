@@ -3,6 +3,7 @@ class MainController < Volt::ModelController
   def index
     # Add code for when the index view is loaded
     #self._current_text = store._messages
+    puts "DEBUG :: listing (#{store._rooms.size}) rooms"
   end
 
   def about
@@ -10,32 +11,12 @@ class MainController < Volt::ModelController
   end
 
   def create_room
-    # new_room = Hash.new
-    # new_room[:name] = page._new_room
-    # new_message = {nickname: nickname, text: self._new_message._text}
     new_room = page._new_room
     #new_room = {name: "Room #{store._rooms.size}"}
-    room = store._rooms << new_room
+    store._rooms << new_room
     page._new_room = {}
-    go "/rooms/#{room._id}"
+    go "/rooms/#{new_room._id}"
   end
-
-  # def add_text
-  #   Volt.logger.info("Receiving message: #{self._new_message}")
-  #   nickname = local_store._nickname || '(Anonym)'
-  #   new_message = Hash.new
-  #   new_message[:_text] = self._new_message._text
-  #   new_message[:_nickname] = nickname
-  #   store._messages << new_message
-  #   self._new_message = {}
-  # end
-  #
-  # def set_nickname
-  #   Volt.logger.info("Setting nickname to: #{self._user._nickname}")
-  #   local_store._nickname = self._user._nickname
-  #   flash = "Setting nickname to: #{self._user._nickname}"
-  #   self._user._nickname = {}
-  # end
 
   private
     # the main template contains a #template binding that shows another

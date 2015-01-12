@@ -3,38 +3,38 @@
 
 <:Body>
   <:volt:notices />
-  <h1>{{ self.model._name }} <small>({{self._messages.size}} messages)</small></h1>
+    <h1>{{ self.model._name }} <small>({{ self.model._messages.size }} messages)</small></h1>
 
-  <div class="container-fluid">
-    <div class="row text-left">
-      <div id="chat-container" class="well">
-        {{ if self.model._messages.size > 0 }}
-          {{ self.model._messages.each do |message| }}
-            <p><strong>{{message.attributes[:nickname]}}: </strong>{{message.attributes[:text]}}</p>
+    <div class="container-fluid">
+      <div class="row text-left">
+        <div id="chat-container" class="well">
+          {{ if self.model._messages.size > 0 }}
+            {{ self.model._messages.each do |message| }}
+              <p><strong>{{message.attributes[:nickname]}}: </strong>{{message.attributes[:text]}}</p>
+            {{ end }}
+          {{ else }}
+            <p>Nothing happened here yet...</p>
           {{ end }}
-        {{ else }}
-          <p>Nothing happened here yet...</p>
-        {{ end }}
+        </div>
       </div>
-    </div>
 
-  {{ if local_store._nickname.empty? }}
-    <form e-submit="set_nickname" id="form-chat" class="form-inline" role="form">
-      <div class="form-group">
-        <label class="sr-only" for="exampleInputNickname">Nickname</label>
-        <input type="nickname" class="form-control" id="exampleInputNickname" placeholder="Nickname" value="{{_user._nickname}}">
-      </div>
-      <button type="submit" class="btn btn-default">Set</button>
-    </form>
-  {{ else }}
-    <form e-submit="add_message" id="form-chat" class="form-inline" role="form">
-      <span>{{ local_store._nickname ? "<strong>#{local_store._nickname}</strong>" : (anonym) }}</span>:
-      <div class="form-group">
-        <label class="sr-only" for="chatMessage">Chat Text</label>
-        <input type="text" class="form-control" id="chatMessage" placeholder="Say something" value="{{_new_message._text}}">
-      </div>
-      <button type="submit" class="btn btn-default">Say</button>
-    </form>
-  {{ end }}
+    {{ if local_store._nickname.empty? }}
+      <form e-submit="set_nickname" id="form-chat" class="form-inline" role="form">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputNickname">Nickname</label>
+          <input type="nickname" class="form-control" id="exampleInputNickname" placeholder="Nickname" value="{{_user._nickname}}">
+        </div>
+        <button type="submit" class="btn btn-default">Set</button>
+      </form>
+    {{ else }}
+      <form e-submit="add_message" id="form-chat" class="form-inline" role="form">
+        <span>{{ local_store._nickname ? "<strong>#{local_store._nickname}</strong>" : (anonym) }}</span>:
+        <div class="form-group">
+          <label class="sr-only" for="chatMessage">Chat Text</label>
+          <input type="text" class="form-control" id="chatMessage" placeholder="Say something" value="{{page._new_message._text}}">
+        </div>
+        <button type="submit" class="btn btn-default">Say</button>
+      </form>
+    {{ end }}
 
 </div>

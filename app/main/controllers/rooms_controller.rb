@@ -1,21 +1,21 @@
 class RoomsController < Volt::ModelController
 
+  model :page
+
   def show
+    puts "DEBUG :: showing Room(#{params._id})"
     store._rooms.find(_id: params._id).then do |results|
       self.model = results.first
+      puts "DEBUG :: Room(#{self.model._id}) found: #{self.model._name}"
+      # puts "DEBUG :: searched in (#{store._rooms.size}) rooms"
     end
   end
 
   def add_message
-    #Volt.logger.info("Receiving message: #{self._new_message}")
-    store._rooms.find(_id: params._id).then do |results|
-      self.model = results.first
-    end
     nickname = local_store._nickname || '(Anon)'
-    new_message = {nickname: nickname, text: self._new_message._text}
+    new_message = {nickname: nickname, text: page._new_message._text}
+    self.page._new_message = {}
     self.model._messages << new_message
-    self._new_message = {}
-    go "/rooms/#{self.model._id}"
   end
 
   def set_nickname
@@ -31,4 +31,5 @@ class RoomsController < Volt::ModelController
     def main_path
       params._controller.or('main') + "/" + params._action.or('index')
     end
+
 end
