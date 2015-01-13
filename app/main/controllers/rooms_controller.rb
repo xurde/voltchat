@@ -3,11 +3,10 @@ class RoomsController < Volt::ModelController
   model :page
 
   def show
-    puts "DEBUG :: showing Room(#{params._id})"
+    puts "DEBUG :: Showing Room(#{params._id})"
     store._rooms.find(_id: params._id).then do |results|
       self.model = results.first
       puts "DEBUG :: Room(#{self.model._id}) found: #{self.model._name}"
-      # puts "DEBUG :: searched in (#{store._rooms.size}) rooms"
     end
   end
 
