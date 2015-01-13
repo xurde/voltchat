@@ -1,5 +1,5 @@
 <:Title>
-  Welcome to VoltChat
+  {{ "Room #{self.model._name} in Voltchat" }}
 
 <:Body>
   <:volt:notices />
@@ -33,7 +33,7 @@
           <label class="sr-only" for="chatMessage">Chat Text</label>
           <input type="text" class="form-control" id="chatMessage" placeholder="Say something" value="{{page._new_message._text}}">
         </div>
-        
+
       </form>
     {{ end }}
 
