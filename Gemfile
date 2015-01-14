@@ -7,6 +7,7 @@ gem 'volt', '~>0.8'
 
 # Twitter bootstrap
 gem 'volt-bootstrap'
+gem 'volt-user-templates'
 
 # Simple theme for bootstrap, remove to theme yourself.
 gem 'volt-bootstrap-jumbotron-theme'

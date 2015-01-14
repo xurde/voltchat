@@ -26,4 +26,7 @@ Volt.setup do |config|
   # have rack deflate all files.
   # config.deflate = true
 
+  # Auth config
+  config.public.auth.use_username = false
+
 end
