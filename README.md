@@ -2,7 +2,8 @@
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/xurde/voltchat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Made with [Volt Framework](http://voltframework.com/)
-See Demo [here](http://voltchat.herokuapp.com/)
+
+See deployed Demo [here](http://voltchat.herokuapp.com/)
 
 
 See Volt docs at https://github.com/voltrb/volt/blob/master/Readme.md
