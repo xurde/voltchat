@@ -3,7 +3,7 @@
 
 Made with [Volt Framework](http://voltframework.com/)
 
-See deployed Demo [here](http://voltchat.herokuapp.com/)
+See deployed [Demo](http://voltchat.herokuapp.com/)
 
 
 See Volt docs at https://github.com/voltrb/volt/blob/master/Readme.md
